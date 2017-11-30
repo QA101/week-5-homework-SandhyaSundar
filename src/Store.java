@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
-public class Store {
+public class Store extends Employee {
 
 	ArrayList<Employee> employees = new ArrayList<Employee>();
-	Manager manager;
+	Manager manager= new Manager("Teena", 50000, 5);//object initialized
 	
+	 
 	public static void main(String[] args) {
 		Store s = new Store();
 		s.PrintEmployees();
@@ -12,7 +13,7 @@ public class Store {
 		s.PrintManager();
 		
 		//TODO: The manager doesn't know how to StockShelfs.
-		Manager.StockSelf();
+		//Manager.StockShelfs();
 		
 		/**
 		 * Challenge Concept: try/catch and throwing an exception
@@ -28,7 +29,7 @@ public class Store {
 		//Notice I am using different constructors for Employees
 		employees.add(new Employee("Tom"));
 		employees.add(new Employee("Jane", 40000));
-		
+		employees.add(new Employee("Nancy",30000));
 		/*
 		 * This add statement will not work until the Manager class has been extended
 		 * However, I never set the manager correctly
@@ -50,7 +51,7 @@ public class Store {
 	public void PrintManager() {
 		System.out.println(manager);
 	}
-	
+	   	
 	//Notice this is a private method
 	private void HireEmployee() {
 		try {
@@ -60,7 +61,7 @@ public class Store {
 			employees.add(manager.HireEmployee(employees.size(), "Sasha"));
 		}
 		catch(Exception e) {
-			//do nothing
+			System.out.println(" Cannot hire where number of empoyee is exceeded"+this.manager.maxSize);
 		}
 	}
 

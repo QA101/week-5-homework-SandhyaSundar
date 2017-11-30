@@ -1,8 +1,5 @@
-/*
- * Employee has multiple different constructors
- */
-public class Employee {
 
+public class Employee {
 	String name;
 	int salary;
 	public Employee() {
@@ -22,7 +19,6 @@ public class Employee {
 	 * TODO Override the toString method to return the name and salary of the employee
 	 */
 	public String toString() {
-		return "";
-	}
-
+		return "name: "+ name +","+ " salary: "+ salary;
+}
 }

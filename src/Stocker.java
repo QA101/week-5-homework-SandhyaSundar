@@ -21,6 +21,7 @@ public class Stocker extends Employee {
 		else {
 			return false;
 		}
+
 	}
 
 }
